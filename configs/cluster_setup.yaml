@@ -1,0 +1,9 @@
+﻿cluster_config:
+  node_count: 4
+  gpu_per_node: 8
+  interconnect: "InfiniBand"
+  precision: "bf16"
+training_params:
+  global_batch_size: 1024
+  optimizer: "AdamW"
+  strategy: "DeepSpeed_Stage3"

@@ -1,0 +1,17 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: nebula-worker-node
+spec:
+  parallelism: 8
+  template:
+    spec:
+      containers:
+      - name: nebula-train
+        image: aashishbedi/nebula-engine:latest
+        resources:
+          limits:
+            nvidia.com/gpu: 1
+        env:
+        - name: MASTER_ADDR
+          value: "nebula-master-svc"

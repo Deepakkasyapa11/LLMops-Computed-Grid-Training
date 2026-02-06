@@ -1,0 +1,5 @@
+﻿checkpoints/
+states/
+__pycache__/
+*.pdf
+.env
